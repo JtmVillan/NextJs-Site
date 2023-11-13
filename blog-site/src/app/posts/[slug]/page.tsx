@@ -25,8 +25,15 @@ const PostPage = (props: any) => {
     const post = getPostContent(slug); // display (unstyled) content of posts
     return (
         <div>
-            <h1>{post.data.title}</h1>
-            <Markdown>{post.content}</Markdown>
+            <div className="my-8 text-center">
+              <h1 className="text-2x1 text-violet-600" >{post.data.title}</h1>
+              <p className="text-slate-400 mt-2" >{post.data.date}</p>
+            </div>
+
+            <article className="prose">
+                <Markdown>{post.content}</Markdown>
+            </article>
+                
             {/* <h1>This is a post: {slug}</h1> */}
             {/* <Markdown>{content}</Markdown> */}
         </div>
