@@ -11,6 +11,7 @@ const HomePage = () => {
     // The '...' operator called the 'spread' operator
     // take all the fields of this item and make the input parameter of this component
     <PostPreview key={post.slug} {...post} />
+    // Note: Keys are needed and they must be unique, slugs are a good way
     // Alternative way to write below
     // <PostPreview
     //   key={post.slug}
@@ -21,7 +22,7 @@ const HomePage = () => {
     // />
   ));
 
-  return <div>{postPreviews}</div>;
+  return <div className="grid grid-cols-1 md:grid-cols-2 gap-4" >{postPreviews}</div>;
 };
 
 export default HomePage;
